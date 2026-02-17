@@ -1,10 +1,18 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "invoice_proj/wsgi.py", "use": "@vercel/python" }
-    ],
-    "routes": [
-      { "src": "/(.*)", "dest": "invoice_proj/wsgi.py" }
-    ]
-  }
-  
+        "builds": [{
+       
+         "src": "invoice_proj/wsgi.py",
+         "use": "@vercel/python",
+         "config": { "maxLambdaSize": "15mb" , "runtime": "python3.9.13"}
+
+        }],
+        "routes": [
+            {
+                "src": "/(.*)",
+                "dest": "invoice_proj/wsgi.py"
+            }
+        ]
+
+
+
+}
